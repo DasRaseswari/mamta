@@ -3,7 +3,7 @@ import logo from "../images/logo.png";
 const Header = () => {
 	return (
 		<div className="logo">
-			<img class="ui centered medium image" src={logo} />
+			<img class="ui centered small image" src={logo} />
 		</div>
 	);
 };
