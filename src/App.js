@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 // import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Home from "./components/Home";
@@ -8,17 +10,18 @@ import Route from "./components/Route";
 import "./App.css";
 
 const App = () => {
+	const [currentPath, setCurrentPath] = useState(window.location.pathname);
+
 	return (
 		<div className="ui container">
 			<Header />
-			<Navigation />
-			<Route path="/">
+			<Navigation currentPath={currentPath} />
+			<Route path="/" currentPath={currentPath} setCurrentPath={setCurrentPath}>
 				<Home />
 			</Route>
-			<Route path="/contact">
+			<Route path="/contact" currentPath={currentPath} setCurrentPath={setCurrentPath}>
 				<Contact />
 			</Route>
-			{/* <Footer /> */}
 		</div>
 	);
 };

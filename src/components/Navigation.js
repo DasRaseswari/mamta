@@ -1,19 +1,19 @@
-import { useState, useEffect } from "react";
-
 import Link from "./Link";
 
-const Navigation = () => {
-	// TODO - make active elements on click action
-
+const Navigation = ({ currentPath }) => {
 	return (
 		<div className="ui secondary pointing menu navigation">
-			<Link href="/" className="item">
+			<Link href="/" className={`${currentPath == "/" ? "active " : ""}item`}>
 				Home
 			</Link>
-			<a className="item">Dress</a>
-			<a className="item">Sari</a>
+			<Link href="/dress" className={`${currentPath == "/dress" ? "active " : ""}item`}>
+				Dress
+			</Link>
+			<Link href="/sari" className={`${currentPath == "/sari" ? "active " : ""}item`}>
+				Sari
+			</Link>
 			<div className="right menu">
-				<Link href="/contact" className="ui item">
+				<Link href="/contact" className={`${currentPath == "/contact" ? "active " : ""}ui item`}>
 					Contact Us
 				</Link>
 			</div>
