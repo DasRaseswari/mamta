@@ -1,28 +1,27 @@
-import { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-// import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Home from "./components/Home";
 import Navigation from "./components/Navigation";
+import Gallery from "./components/Gallery";
 import Contact from "./components/Contact";
-import Route from "./components/Route";
 
 import "./App.css";
 
 const App = () => {
-	const [currentPath, setCurrentPath] = useState(window.location.pathname);
-
 	return (
-		<div className="ui container">
-			<Header />
-			<Navigation currentPath={currentPath} />
-			<Route path="/" currentPath={currentPath} setCurrentPath={setCurrentPath}>
-				<Home />
-			</Route>
-			<Route path="/contact" currentPath={currentPath} setCurrentPath={setCurrentPath}>
-				<Contact />
-			</Route>
-		</div>
+		<Router>
+			<div className="ui container">
+				<Header />
+				<Navigation />
+
+				<Routes>
+					<Route path="/" element={<Home />} />
+					<Route path="/contact" element={<Contact />} />
+					<Route path="/gallery/:category" element={<Gallery />} />
+				</Routes>
+			</div>
+		</Router>
 	);
 };
 

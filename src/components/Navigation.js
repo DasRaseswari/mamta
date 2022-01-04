@@ -1,24 +1,29 @@
-import Link from "./Link";
+import { Link, useLocation } from "react-router-dom";
 
-const Navigation = ({ currentPath }) => {
+const Navigation = () => {
 	return (
 		<div className="ui secondary pointing menu navigation">
-			<Link href="/" className={`${currentPath == "/" ? "active " : ""}item`}>
+			<Link to="/" className={`${usePathClass("/")}item`}>
 				Home
 			</Link>
-			<Link href="/dress" className={`${currentPath == "/dress" ? "active " : ""}item`}>
+			<Link to="/gallery/dress" className={`${usePathClass("/gallery/dress")}item`}>
 				Dress
 			</Link>
-			<Link href="/sari" className={`${currentPath == "/sari" ? "active " : ""}item`}>
+			<Link to="/gallery/sari" className={`${usePathClass("/gallery/sari")}item`}>
 				Sari
 			</Link>
 			<div className="right menu">
-				<Link href="/contact" className={`${currentPath == "/contact" ? "active " : ""}ui item`}>
+				<Link to="/contact" className={`${usePathClass("/contact")}ui item`}>
 					Contact Us
 				</Link>
 			</div>
 		</div>
 	);
+};
+
+// usePathClass is a custom hook to set the active menu based on current path
+const usePathClass = (requiredPath) => {
+	return useLocation().pathname == requiredPath ? "active " : "";
 };
 
 export default Navigation;
