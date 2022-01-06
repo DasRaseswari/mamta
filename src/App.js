@@ -7,6 +7,7 @@ import Gallery from "./components/Gallery";
 import Contact from "./components/Contact";
 
 import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const App = () => {
 	return (
