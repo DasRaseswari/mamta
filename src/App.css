@@ -5,3 +5,36 @@
 .logo {
 	padding-top: 1rem;
 }
+
+.category-banner {
+	position: relative;
+	margin-bottom: 1rem;
+}
+
+.banner-image {
+	border-radius: 10px;
+	width: 100%;
+	height: 5rem;
+	background-size: cover;
+}
+
+.category-banner-text {
+	position: absolute;
+	bottom: 1.4rem;
+	right: 47%;
+	color: golden;
+}
+
+.card-text {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+
+/* Make truncated text visible on hover */
+/* .card-text:hover {
+	overflow: visible;
+} */
