@@ -5,7 +5,7 @@ import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import faker from "faker";
 
-import bannerImg from "../images/background.png";
+import bannerImg from "../images/banner.png";
 
 // const cardList = [
 // 	{

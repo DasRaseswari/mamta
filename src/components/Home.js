@@ -1,32 +1,31 @@
 import Carousel from "react-bootstrap/Carousel";
 
+import images from "../images";
+
 const carouselList = [
 	{
-		src: "https://images.forestessentialsindia.com/pub/media/catalog/category/perfumes_1880x640.jpg",
-		alt: "First Slide",
-		title: "Image 1",
-		desc: "A sample image"
+		src: images.carousel[1],
+		title: "Handmade Embroidery",
+		desc: "on blouses and kurtis"
 	},
 	{
-		src: "https://picsum.photos/id/1015/1920/426",
-		alt: "Second Slide",
-		title: "Image 2",
-		desc: "This is a description"
+		src: images.carousel[2],
+		title: "Personalized Designs",
+		desc: "uniquely yours"
 	},
 	{
-		src: "https://picsum.photos/1920/426",
-		alt: "Third Slide",
-		title: "Image 3",
-		desc: "This is a placeholder"
+		src: images.carousel[3],
+		title: "Customized Accessories",
+		desc: "tailored for your everyday needs"
 	}
 ];
 
 const Home = () => {
 	const renderCarouselItem = () => {
-		return carouselList.map(({ src, alt, title, desc }) => {
+		return carouselList.map(({ src, title, desc }) => {
 			return (
 				<Carousel.Item interval={5000}>
-					<img className="d-block w-1000" src={src} alt={alt} />
+					<img className="d-block w-1000 carousel-item img-fluid" src={src} alt={title} />
 					<Carousel.Caption>
 						<h3>{title}</h3>
 						<p>{desc}</p>
