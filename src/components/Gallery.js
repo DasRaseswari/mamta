@@ -1,38 +1,57 @@
+import faker from "faker";
 import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+
 import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
-import faker from "faker";
+import unsplash from "../api/unsplash";
 
 import bannerImg from "../images/banner.png";
 
-// const cardList = [
-// 	{
-// 		src: "https://picsum.photos/id/1015/1920/426",
-// 		title: "Red and Beige Dress",
-// 		text: "A classy red and beige Assamese dress for your next celebration"
-// 	},
-// 	{
-// 		src: "https://picsum.photos/id/1016/1920/426",
-// 		title: "Blue and Beige Dress",
-// 		text: "A classy red and beige Assamese dress for your next celebration"
-// 	}
-// ];
+const processImages = (photos) => {
+	return photos.map((photo) => {
+		const { id, alt_description, tags, urls } = photo;
+		let title = `${tags[0].title} ${tags[1].title} ${tags[2].title}`;
+		return {
+			id: id,
+			src: urls.small,
+			title: title,
+			text: alt_description
+		};
+	});
+};
 
 const Gallery = () => {
 	let { category } = useParams();
+	const [images, setImages] = useState([]);
 
-	const renderCardItem = (idx) => {
+	useEffect(async () => {
+		let response = await unsplash.search.getPhotos({
+			query: category,
+			page: Math.floor(Math.random() * 10),
+			perPage: Math.floor(Math.random() * 20)
+		});
+
+		if (response.status != 200) {
+			console.log(response);
+		} else {
+			let photos = response.response.results;
+			setImages(processImages(photos));
+		}
+	}, [category]);
+
+	const renderCardItem = ({ id, src, title, text }) => {
 		return (
-			<Col key={idx}>
+			<Col key={id}>
 				<Card style={{ width: "18rem", margin: "auto" }} className="text-center">
-					<Card.Img variant="top" src={faker.image.image()} alt="Card image" />
+					<Card.Img variant="top" src={src} alt="Card image" className="card-image" />
 					<Card.Body variant="top">
-						<Card.Title alt="Sample title" className="card-text">
-							{faker.commerce.productName()}
+						<Card.Title alt={title} className="card-title">
+							{title}
 						</Card.Title>
-						<Card.Text className="card-text">{faker.commerce.productDescription()}</Card.Text>
+						<Card.Text className="text">{text}</Card.Text>
 						<Card.Text>&#8377;{faker.commerce.price()}</Card.Text>
 						<Button variant="primary">Add to Favorites</Button>
 					</Card.Body>
@@ -42,7 +61,7 @@ const Gallery = () => {
 	};
 
 	return (
-		<>
+		<div>
 			<div className="category-banner">
 				<img src={bannerImg} className="banner-image"></img>
 				<div className="category-banner-text">
@@ -51,11 +70,9 @@ const Gallery = () => {
 			</div>
 
 			<Row xs={1} md={4} className="g-4">
-				{Array.from({ length: Math.floor(Math.random() * 30) }).map((_, idx) =>
-					renderCardItem(idx)
-				)}
+				{images.map((image) => renderCardItem(image))}
 			</Row>
-		</>
+		</div>
 	);
 };
 

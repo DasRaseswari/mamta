@@ -6,8 +6,8 @@ const Navigation = () => {
 			<Link to="/" className={`${usePathClass("/")}item`}>
 				Home
 			</Link>
-			<Link to="/gallery/dress" className={`${usePathClass("/gallery/dress")}item`}>
-				Dress
+			<Link to="/gallery/kurti" className={`${usePathClass("/gallery/kurti")}item`}>
+				Kurti
 			</Link>
 			<Link to="/gallery/sari" className={`${usePathClass("/gallery/sari")}item`}>
 				Sari

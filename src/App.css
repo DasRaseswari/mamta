@@ -35,16 +35,23 @@
 	color: golden;
 }
 
-.card-text {
+.card-title {
+	line-height: 1.5em;
+	min-height: 3em;
+}
+
+.text.card-text {
 	text-overflow: ellipsis;
 	overflow: hidden;
 	display: -webkit-box;
 	-webkit-line-clamp: 2;
 	line-clamp: 2;
 	-webkit-box-orient: vertical;
+	line-height: 1.5em;
+	min-height: 3em;
 }
 
-/* Make truncated text visible on hover */
-/* .card-text:hover {
-	overflow: visible;
-} */
+.card-image {
+	width: 250px;
+	height: 25rem;
+}
