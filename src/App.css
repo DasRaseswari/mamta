@@ -4,6 +4,7 @@
 
 .logo {
 	padding-top: 1rem;
+	cursor: pointer;
 }
 
 .img-fluid {
@@ -33,6 +34,12 @@
 	bottom: 1.4rem;
 	right: 47%;
 	color: golden;
+}
+
+.card {
+	width: 18rem;
+	margin: auto;
+	cursor: pointer;
 }
 
 .card-title {
