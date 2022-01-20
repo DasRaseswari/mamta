@@ -6,18 +6,18 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 // import Button from "react-bootstrap/Button";
 import unsplash from "../api/unsplash";
-
 import images from "../images";
+import { getPrice, getProductTitle } from "../utils/helper";
 
 const processItems = (photos) => {
 	return photos.map((photo) => {
 		const { id, alt_description, tags, urls } = photo;
-		let title = `${tags[0].title} ${tags[1].title} ${tags[2].title}`;
 		return {
 			id: id,
 			src: urls.small,
-			title: title,
-			text: alt_description
+			title: getProductTitle(tags),
+			text: alt_description,
+			price: getPrice()
 		};
 	});
 };
@@ -41,7 +41,7 @@ const Gallery = () => {
 		}
 	}, [category]);
 
-	const renderCardItem = ({ id, src, title, text }) => {
+	const renderCardItem = ({ id, src, title, text, price }) => {
 		return (
 			<Col key={id}>
 				<Card className="text-center" onClick={() => window.open(`/product/${id}`)}>
@@ -51,11 +51,9 @@ const Gallery = () => {
 							{title}
 						</Card.Title>
 						<Card.Text className="text">{text}</Card.Text>
-						<Card.Text>
-							&#8377;{Math.floor(Math.random() * (1000000 - 50000) + 50000) / 100}
-						</Card.Text>
-
-						{/* <Button variant="primary">Add to Favorites</Button> */}
+						<div className="ui tag labels">
+							<div className="ui label">{price}</div>
+						</div>
 					</Card.Body>
 				</Card>
 			</Col>
