@@ -32,20 +32,21 @@ const Product = () => {
 	}, [productId]);
 
 	return (
-		<div>
+		<div className="ui container segment">
 			<div className="ui two column very relaxed grid">
-				<div className="column-left">
-					<img className="ui rounded image product-image" src={src} alt={title}></img>
+				<div className="column">
+					<div className="ui container">
+						<img className="ui  centered rounded fluid image" src={src} alt={title}></img>
+					</div>
 				</div>
-				<div className="column column-right">
+				<div className="column">
 					<h1>{text} </h1>
-					<div className="ui divider"></div>
 					<p>
 						<h5>{price}</h5>
 						<small>inclusive of all taxes</small>
 					</p>
-
-					<p>
+					<div className="ui divider"></div>
+					<p style={{ textAlign: "justify" }}>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 						incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
 						exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure

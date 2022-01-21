@@ -61,7 +61,7 @@ const Gallery = () => {
 	};
 
 	return (
-		<div>
+		<div className="ui container">
 			<div className="category-banner">
 				<img src={images.banner} className="banner-image"></img>
 				<div className="category-banner-text">

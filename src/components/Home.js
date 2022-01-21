@@ -35,7 +35,11 @@ const Home = () => {
 		});
 	};
 
-	return <Carousel>{renderCarouselItem()}</Carousel>;
+	return (
+		<div className="ui container">
+			<Carousel>{renderCarouselItem()}</Carousel>
+		</div>
+	);
 };
 
 export default Home;
