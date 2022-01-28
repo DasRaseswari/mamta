@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import Button from "react-bootstrap/Button";
+// import Button from "react-bootstrap/Button";
 
 import unsplash from "../api/unsplash";
 import { getPrice, getProductTitle } from "../utils/helper";
@@ -54,7 +54,7 @@ const Product = () => {
 						Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
 						mollit anim id est laborum.
 					</p>
-					<Button className="fluid ui button">Add to Favorites</Button>
+					{/* <Button className="fluid ui button">Add to Favorites</Button> */}
 				</div>
 			</div>
 		</div>
