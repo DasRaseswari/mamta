@@ -1,24 +1,6 @@
 import Carousel from "react-bootstrap/Carousel";
 
-import images from "../images";
-
-const carouselList = [
-	{
-		src: images.carousel[1],
-		title: "Handmade Embroidery",
-		desc: "on blouses and kurtis"
-	},
-	{
-		src: images.carousel[2],
-		title: "Personalized Designs",
-		desc: "uniquely yours"
-	},
-	{
-		src: images.carousel[3],
-		title: "Customized Accessories",
-		desc: "tailored for your everyday needs"
-	}
-];
+import { carouselList, aboutUs } from "../utils/dataConstants";
 
 const Home = () => {
 	const renderCarouselItem = () => {
@@ -40,12 +22,7 @@ const Home = () => {
 			<Carousel>{renderCarouselItem()}</Carousel>
 			<div class="ui raised padded yellow container segment">
 				<h2 class="ui header">About Us</h2>
-				<p>
-					Mamta's collections are inspired by a trend of strong, dignified, independent women with a
-					purpose, who know their worth and can achieve anything they set their minds on. Mamta
-					showcases a collection of handloom textiles with soft embroidery designs, perfect for all
-					women, celebrating freedom, grace and power.
-				</p>
+				<p>{aboutUs}</p>
 			</div>
 			<br />
 		</div>

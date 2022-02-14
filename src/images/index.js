@@ -1,12 +1,13 @@
 const images = {
 	logo: require("./logo.png").default,
 	banner: require("./banner.png").default,
-	carousel: {
-		1: require("./carousel1.jpg").default,
-		2: require("./carousel2.jpg").default,
-		3: require("./carousel3.jpg").default
-	},
+	carousel: {},
 	product1: require("./product1.jpg").default
 };
+
+// adding carousel images dynamically
+for (let i = 1; i < 10; i++) {
+	images["carousel"][i] = require(`./carousel/carousel${i}.jpg`).default;
+}
 
 export default images;

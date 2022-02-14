@@ -71,6 +71,7 @@ const Gallery = () => {
 			<Row xs={1} md={4} className="g-4">
 				{items.map((image) => renderCardItem(image))}
 			</Row>
+			<br />
 		</div>
 	);
 };
