@@ -3,5 +3,12 @@ export const getPrice = () => {
 };
 
 export const getProductTitle = (tags) => {
-	return `${tags[0].title} ${tags[1].title} ${tags[2].title}`;
+	let title = "";
+
+	// taking the first three words from the tags array
+	const upperBoundTags = tags.length >= 3 ? 3 : tags.length;
+	for (let i = 0; i < upperBoundTags; i++) {
+		title += `${tags[i].title} `;
+	}
+	return title;
 };

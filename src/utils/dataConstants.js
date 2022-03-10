@@ -39,5 +39,5 @@ export const carouselList = [
 export const aboutUs =
 	"Mamta's collections are inspired by a trend of strong, dignified, independent women with a purpose, who know their worth and can achieve anything they set their minds on. Mamta showcases a collection of handloom textiles with soft embroidery designs, perfect for all women, celebrating freedom, grace and power.";
 
-// Navigation Component
+// Navigation bar component
 export const categoryTypes = ["Dress", "Kurti", "Sari", "Blouse"];

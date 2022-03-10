@@ -11,6 +11,7 @@ import { getPrice, getProductTitle } from "../utils/helper";
 
 const processItems = (photos) => {
 	return photos.map((photo) => {
+		// taking each photo object and cleaning up to get the required properties
 		const { id, alt_description, tags, urls } = photo;
 		return {
 			id: id,
@@ -26,19 +27,22 @@ const Gallery = () => {
 	let { category } = useParams();
 	const [items, setItems] = useState([]);
 
-	useEffect(async () => {
-		let response = await unsplash.search.getPhotos({
-			query: category,
-			page: Math.floor(Math.random() * 3),
-			perPage: Math.floor(Math.random() * 20)
-		});
+	useEffect(() => {
+		async function fetchData() {
+			let response = await unsplash.search.getPhotos({
+				query: category,
+				page: Math.floor(Math.random() * 3),
+				perPage: Math.floor(Math.random() * 20)
+			});
 
-		if (response.status != 200) {
-			console.log(response);
-		} else {
-			let photos = response.response.results;
-			setItems(processItems(photos));
+			if (response.status !== 200) {
+				console.log(response);
+			} else {
+				let photos = response.response.results;
+				setItems(processItems(photos));
+			}
 		}
+		fetchData();
 	}, [category]);
 
 	const renderCardItem = ({ id, src, title, text, price }) => {
@@ -63,7 +67,7 @@ const Gallery = () => {
 	return (
 		<div className="ui container">
 			<div className="category-banner">
-				<img src={images.banner} className="banner-image"></img>
+				<img src={images.banner} className="banner-image" alt="banner"></img>
 				<div className="category-banner-text">
 					<h2>{category.toUpperCase()}</h2>
 				</div>

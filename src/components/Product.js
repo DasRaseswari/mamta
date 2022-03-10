@@ -20,15 +20,18 @@ const Product = () => {
 	const [product, setProduct] = useState({ src: "", title: "", text: "" });
 	let { src, title, text, price } = product;
 
-	useEffect(async () => {
-		let response = await unsplash.photos.get({ photoId: productId });
+	useEffect(() => {
+		async function fetchData() {
+			let response = await unsplash.photos.get({ photoId: productId });
 
-		if (response.status != 200) {
-			console.log(response);
-		} else {
-			let product = response.response;
-			setProduct(processProduct(product));
+			if (response.status !== 200) {
+				console.log(response);
+			} else {
+				let product = response.response;
+				setProduct(processProduct(product));
+			}
 		}
+		fetchData();
 	}, [productId]);
 
 	return (

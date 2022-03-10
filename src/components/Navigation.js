@@ -32,7 +32,7 @@ const Navigation = () => {
 
 // usePathClass is a custom hook to set the active menu based on current path
 const usePathClass = (requiredPath) => {
-	return useLocation().pathname == requiredPath ? "active " : "";
+	return useLocation().pathname === requiredPath ? "active " : "";
 };
 
 export default Navigation;
