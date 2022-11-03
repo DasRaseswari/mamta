@@ -2,6 +2,7 @@ React app to build a women's clothing catalog.
 
 ![home-screen-1](src/images/screenshots/home-screen-1.png)
 ![home-screen-2](src/images/screenshots/home-screen-2.png)
+![home-screen-3](src/images/screenshots/home-screen-3.png)
 ![dress](src/images/screenshots/dress.png)
 ![sari](src/images/screenshots/sari.png)
 ![blouse](src/images/screenshots/blouse.png)
