@@ -7,10 +7,16 @@ const Contact = () => {
 			<a href={`tel:${phone}`}>
 				<i className="in flag"></i> {phone}
 			</a>
+			<br />
+			<br />
+			<br />
 			<h2>Email:</h2>
 			<a href={`mailto:${email}`}>
 				<i className="envelope icon"></i> {email}
 			</a>
+			<br />
+			<br />
+			<br />
 			<h2>Address:</h2>
 			<a href={googleMapLink} target="_blank" rel="noreferrer">
 				<i className="map pin icon"></i> {storeLocation}
