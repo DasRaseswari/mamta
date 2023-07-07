@@ -1,4 +1,9 @@
-import images from "../images";
+import carouselImage1 from "../images/carousel/carousel1.jpg";
+import carouselImage2 from "../images/carousel/carousel2.jpg";
+import carouselImage3 from "../images/carousel/carousel3.jpg";
+import carouselImage4 from "../images/carousel/carousel4.jpg";
+import carouselImage5 from "../images/carousel/carousel5.jpg";
+import carouselImage6 from "../images/carousel/carousel6.jpg";
 
 // Contact component
 export const phone = "+91 82493 07278";
@@ -10,30 +15,30 @@ export const storeLocation =
 // Home component
 export const carouselList = [
 	{
-		src: images.carousel[1],
+		src: carouselImage1,
 		title: "Handmade Embroidery",
 		desc: "on blouses and kurtis"
 	},
 	{
-		src: images.carousel[2],
+		src: carouselImage2,
 		title: "Silk Saris",
 		desc: "for every occasion"
 	},
 	{
-		src: images.carousel[3],
+		src: carouselImage3,
 		title: "Personalized Designs",
 		desc: "uniquely yours"
 	},
 	{
-		src: images.carousel[4]
+		src: carouselImage4
 	},
 	{
-		src: images.carousel[5],
+		src: carouselImage5,
 		title: "Customized Accessories",
 		desc: "tailored for your everyday needs"
 	},
 	{
-		src: images.carousel[6]
+		src: carouselImage6
 	}
 ];
 export const aboutUs =
