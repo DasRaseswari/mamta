@@ -6,7 +6,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 // import Button from "react-bootstrap/Button";
 import unsplash from "../api/unsplash";
-import images from "../images";
+import bannerImage from "../images/banner.png";
 import { getPrice, getProductTitle } from "../utils/helper";
 
 const processItems = (photos) => {
@@ -67,7 +67,7 @@ const Gallery = () => {
 	return (
 		<div className="ui container">
 			<div className="category-banner">
-				<img src={images.banner} className="banner-image" alt="banner"></img>
+				<img src={bannerImage} className="banner-image" alt="banner"></img>
 				<div className="category-banner-text">
 					<h2>{category.toUpperCase()}</h2>
 				</div>
