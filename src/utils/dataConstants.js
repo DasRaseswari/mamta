@@ -9,8 +9,7 @@ import carouselImage6 from "../images/carousel/carousel6.jpg";
 export const phone = "+91 82493 07278";
 export const email = "mamatadas026@gmail.com";
 export const googleMapLink = "https://goo.gl/maps/DG9pwychsZgyENuH9";
-export const storeLocation =
-	"Patia, Koel Campus, Infront of Allahabad Bank, near Raymond Show Room, Bhubaneswar, Odisha 751024";
+export const storeLocation = "Mamta - A New Age Handloom";
 
 // Home component
 export const carouselList = [
