@@ -1,7 +1,5 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-// import Button from "react-bootstrap/Button";
-
 import unsplash from "../api/unsplash";
 import { getPrice, getProductTitle } from "../utils/helper";
 
@@ -36,15 +34,21 @@ const Product = () => {
 
 	return (
 		<div className="ui container segment">
-			<img className="ui centered rounded fluid image" src={src} alt={title}></img>
-			<h3>{text}</h3>
+			<div className="ui grid">
+				<div className="eleven wide column">
+					<h3>{text}</h3>
+				</div>
+				<div className="five wide column">
+					<h4 className="ui right aligned yellow header">
+						{price}
+						<div className="sub header">inclusive of all taxes</div>
+					</h4>
+				</div>
+			</div>
 			<br />
-			<p>
-				<h5 className="ui yellow header">
-					{price}
-					<div class="sub header">inclusive of all taxes</div>
-				</h5>
-			</p>
+			<img className="ui centered rounded fluid image" src={src} alt={title}></img>
+			<br />
+			<h2>Overview</h2>
 			<div className="ui divider"></div>
 			<p style={{ textAlign: "justify" }}>
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
