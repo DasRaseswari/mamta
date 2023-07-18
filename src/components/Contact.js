@@ -2,7 +2,7 @@ import { phone, email, googleMapLink, storeLocation } from "../utils/dataConstan
 
 const Contact = () => {
 	return (
-		<div className="ui raised padded yellow container segment">
+		<div className="ui raised yellow segment">
 			<h2 class="ui header">Contact Us</h2>
 			<br />
 			<h3>Phone:</h3>

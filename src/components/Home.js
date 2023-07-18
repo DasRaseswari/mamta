@@ -22,7 +22,7 @@ const Home = () => {
 	return (
 		<div className="ui container">
 			<Carousel>{renderCarouselItem()}</Carousel>
-			<div class="ui raised padded yellow container segment">
+			<div class="ui raised yellow segment">
 				<h2 class="ui header">About Us</h2>
 				<p>{aboutUs}</p>
 			</div>
