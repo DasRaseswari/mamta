@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-// import Button from "react-bootstrap/Button";
 import unsplash from "../api/unsplash";
 import bannerImage from "../images/banner.png";
 import { getPrice, getProductTitle } from "../utils/helper";

@@ -30,10 +30,13 @@
 }
 
 .category-banner-text {
-	position: absolute;
-	bottom: 1.4rem;
-	right: 47%;
-	color: golden;
+	position: relative;
+	bottom: 3.7rem;
+	text-align: center;
+}
+
+.category-banner-text h2 {
+	color: goldenrod;
 }
 
 .card {

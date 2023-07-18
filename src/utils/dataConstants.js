@@ -9,7 +9,7 @@ import carouselImage6 from "../images/carousel/carousel6.jpg";
 export const phone = "+91 82493 07278";
 export const email = "mamatadas026@gmail.com";
 export const googleMapLink = "https://goo.gl/maps/DG9pwychsZgyENuH9";
-export const storeLocation = "Mamta - A New Age Handloom";
+export const storeLocation = "Mamta - A New Age Handloom, Bhubaneswar, Odisha";
 
 // Home component
 export const carouselList = [

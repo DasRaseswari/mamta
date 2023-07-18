@@ -21,11 +21,6 @@ const Navigation = () => {
 			{categoryTypes.map((category, i) => (
 				<CategoryComp category={category} key={i} />
 			))}
-			<div className="right menu">
-				<Link to="/contact" className={`${usePathClass("/contact")}ui item`}>
-					Contact Us
-				</Link>
-			</div>
 		</div>
 	);
 };

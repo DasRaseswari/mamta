@@ -2,6 +2,8 @@ import Carousel from "react-bootstrap/Carousel";
 
 import { carouselList, aboutUs } from "../utils/dataConstants";
 
+import Contact from "./Contact";
+
 const Home = () => {
 	const renderCarouselItem = () => {
 		return carouselList.map(({ src, title, desc }) => {
@@ -24,6 +26,7 @@ const Home = () => {
 				<h2 class="ui header">About Us</h2>
 				<p>{aboutUs}</p>
 			</div>
+			<Contact></Contact>
 			<br />
 		</div>
 	);
