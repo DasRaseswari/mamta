@@ -1,14 +1,14 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import unsplash from "../api/unsplash";
-import { getPrice, getProductTitle } from "../utils/helper";
+import { getPrice } from "../utils/helper";
 
 const processProduct = (product) => {
-	const { urls, tags, alt_description } = product;
+	const { urls, description, alt_description } = product;
 	return {
 		src: urls.regular,
-		title: getProductTitle(tags),
-		text: alt_description,
+		title: alt_description,
+		text: description,
 		price: getPrice()
 	};
 };

@@ -6,17 +6,17 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import unsplash from "../api/unsplash";
 import bannerImage from "../images/banner.png";
-import { getPrice, getProductTitle } from "../utils/helper";
+import { getPrice } from "../utils/helper";
 
 const processItems = (photos) => {
 	return photos.map((photo) => {
 		// taking each photo object and cleaning up to get the required properties
-		const { id, alt_description, tags, urls } = photo;
+		const { id, description, alt_description, urls } = photo;
 		return {
 			id: id,
 			src: urls.small,
-			title: getProductTitle(tags),
-			text: alt_description,
+			title: alt_description,
+			text: description,
 			price: getPrice()
 		};
 	});
